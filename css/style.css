@@ -11,6 +11,10 @@
   background-color: grey;
 }
 
+/* per togliere i pallini da tutte le liste */
+ul {
+  list-style: none;
+}
 
 /* MAIN */
 
@@ -57,20 +61,56 @@ nav#main_nav {
 
 #main_nav .top_nav .logo_nav {
   width: 100%;
-  height: 100px;
-  background-color: yellow;
+  height: 80px;
+  /* background-color: yellow; */
+}
+
+/* per nascondere il logo grande quando la nav-main si rimpicciolisce */
+@media screen and (max-width: 600px) {
+  #main_nav .top_nav .logo_nav {
+    display: none;
+  }
+}
+
+#main_nav .top_nav .logo_small {
+  display: none;
+}
+
+/* per far comparire il logo piccolo quando la nav-main si rumbicciolisce */
+@media screen and (max-width: 600px) {
+  #main_nav .top_nav .logo_small {
+    display: block;
+  }
 }
 
 #main_nav .top_nav .menu_nav {
   width: 100%;
-  height: 100px;
-  background-color: yellow;
+  /* background-color: yellow; */
+}
+
+/* per dividere di qualche pixel gli elementi della nav-menu */
+#main_nav .top_nav .menu_nav ul li {
+  padding: 5px 0;
+}
+
+/* per dare una grandezza alle immagini della nav-menu */
+#main_nav .top_nav .menu_nav img {
+  height: 30px;
+  vertical-align: middle;
+  margin-right: 10px;
 }
 
 #main_nav .top_nav .playlist_nav {
   width: 100%;
-  height: calc(100% - 200px);
   background-color: yellow;
+}
+
+
+/* per far scomparire la playlist quando la nav-main si rimpicciolisce */
+@media screen and (max-width: 600px) {
+  #main_nav .top_nav .playlist_nav {
+    display: none;
+  }
 }
 
 /* per creare la barra di scorrimento a fianco alla playlist quando rimpiccioliamo in altezza la pagina */
@@ -107,6 +147,8 @@ nav#main_nav {
   overflow-y: auto;
 }
 
+
+/* per mantenere le stesse proporzioni quando la nav-main si rimpicciolisce */
 @media screen and (max-width: 600px) {
   #main_section {
     width: calc(100% - 50px);
@@ -131,6 +173,8 @@ nav#main_nav {
   z-index: 1;
 }
 
+
+/* per mantenere le proporzioni della call-to-action quando la nav-main si rimpicciolisce */
 @media screen and (max-width: 600px) {
   #main_section .call_to_action {
     height: 100px;
