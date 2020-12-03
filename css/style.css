@@ -31,7 +31,7 @@ main::after {
 nav#main_nav {
   width: 300px;
   height: calc(100% - 100px);
-  min-height: 500px;
+  min-height: 450px;
   background-color: red;
   position: fixed;
   display: flex;
@@ -65,6 +65,12 @@ nav#main_nav {
   width: 100%;
   height: calc(100% - 200px);
   background-color: yellow;
+}
+
+/* per creare la barra di scorrimento a fianco alla playlist quando rimpiccioliamo in altezza la pagina */
+#main_nav .top_nav .playlist_nav .list {
+  overflow: scroll;
+  height: 80%;
 }
 
 .bottom_nav {
@@ -155,7 +161,7 @@ nav#main_nav {
 footer {
   width: 100%;
   height: 100px;
-  background-color: black;
+  background-color: green;
   position: fixed;
   bottom: 0;
 
