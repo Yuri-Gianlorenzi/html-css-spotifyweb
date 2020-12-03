@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 #wrapper {
   height: 100vh;
   width: 100%;
@@ -14,6 +18,11 @@
 /* per togliere i pallini da tutte le liste */
 ul {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 /* MAIN */
@@ -52,7 +61,7 @@ nav#main_nav {
   height: 80%;
   width: calc(100% - 20px);
   margin: 10px;
-  background-color: lightblue;
+  background-color: black;;
   display: flex;
   flex-direction: column;
 }
@@ -85,7 +94,8 @@ nav#main_nav {
 
 #main_nav .top_nav .menu_nav {
   width: 100%;
-  /* background-color: yellow; */
+  height: 40%;
+  padding: 10px 0;
 }
 
 /* per dividere di qualche pixel gli elementi della nav-menu */
@@ -100,11 +110,31 @@ nav#main_nav {
   margin-right: 10px;
 }
 
+/* WARNING PLAYLIST DELLA MAIN NAV */
+
 #main_nav .top_nav .playlist_nav {
   width: 100%;
-  background-color: yellow;
+  height: 60%;
+  padding: 5px 0;
 }
 
+#main_nav .top_nav .playlist_nav h3 {
+  text-transform: uppercase;
+  padding: 10px 0;
+}
+
+#main_nav .top_nav .playlist_nav > a {
+  padding: 10px 0;
+  background-color: red;
+  display: block;
+  line-height: 40px;
+}
+
+#main_nav .top_nav .playlist_nav > a i {
+  font-size: 40px;
+  vertical-align: middle;
+  padding-right: 20px;
+}
 
 /* per far scomparire la playlist quando la nav-main si rimpicciolisce */
 @media screen and (max-width: 600px) {
@@ -119,11 +149,13 @@ nav#main_nav {
   height: 80%;
 }
 
+/* / playlist della main nav */
+
 .bottom_nav {
   height: 20%;
   width: calc(100% - 20px);
   margin: 10px;
-  background-color: lightblue;
+  background-color: black;
   display: flex;
   flex-direction: column;
 }
@@ -132,9 +164,32 @@ nav#main_nav {
   height: 50%;
   width: 100%;
   border-bottom: 1px solid white;
+
 }
 
+#main_nav .bottom_nav .install_nav a {
+  padding: 5px 0;
 
+}
+
+#main_nav .bottom_nav .install_nav img {
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 20px;
+}
+
+#main_nav .bottom_nav .profile_nav {
+  height: 50%;
+  width: 100%;
+  padding: 10px 0;
+}
+
+#main_nav .bottom_nav .profile_nav img {
+  height: 40px;
+  vertical-align: middle;
+  margin-right: 20px;
+  border-radius: 50%;
+}
 
 /* / NAV colonna sinistra della pagina */
 
