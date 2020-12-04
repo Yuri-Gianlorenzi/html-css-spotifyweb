@@ -335,8 +335,9 @@ section#main_content {
 /* per centrare verticalmente gli elementi della lista, per distanziarli tra di loro e far si che siano in maiuscolo*/
 .main_content_nav_list li {
   line-height: 50px;
-  margin: 0 20px;
+  margin: 0 15px;
   text-transform: uppercase;
+  font-size: 12px;
 }
 
 /* WARNING RECENTLY PLAYED */
@@ -345,7 +346,7 @@ section#main_content {
 #played h2 {
   color: white;
   padding: 20px 0px;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 /* creiamo una lista ncon caratteristiche flex e wrap per quando si rimpicciolisce il display */
@@ -359,9 +360,46 @@ section#main_content {
 .played_element {
   flex-basis: calc(100% / 7);
   margin: 0 10px;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
   text-align: center;
 }
+
+per modificare lo spazio tra i contenitori vengono utilizzate le mediaquery in base alla larghezza del display, viene calcolato anche un margine per cercare di centrare il tutto nella riga
+@media screen and (max-width: 1170px) {
+  .played_element {
+    flex-basis: calc(100% / 5 - 20px);
+    margin: 0 10px;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .played_element {
+    flex-basis: calc(100% / 4 - 20px);
+    margin: 0 10px;
+  }
+}
+
+@media screen and (max-width: 826px) {
+  .played_element {
+    flex-basis: calc(100% / 3 - 20px);
+    margin: 0 10px;
+  }
+}
+
+@media screen and (max-width: 684px) {
+  .played_element {
+    flex-basis: calc(100% / 2 - 20px);
+    margin: 0 10px;
+  }
+}
+
+@media screen and (max-width: 343px) {
+  .played_element {
+    flex-basis: calc(100% - 20px);
+    margin: 0 10px;
+  }
+}
+
 
 /* diamo un position relative al contenitore dell'immagine, ci serve per il layover */
 .played_element .cover {
