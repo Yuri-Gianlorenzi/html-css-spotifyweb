@@ -16,9 +16,14 @@ ul {
 
 a {
   text-decoration: none;
+  color: #999999;
+}
+
+a:hover {
   color: white;
 }
 
+/* WARNING colori */
 .blue {
   background-color: blue;
 }
@@ -31,6 +36,10 @@ a {
   background-color: violet;
 }
 
+.clr_gray {
+  color: #999999;
+}
+
 .font-big {
   font-size: 30px;
 }
@@ -38,19 +47,33 @@ a {
 /* / REGOLE GENERALI */
 
 /* WARNING BOTTONI */
-.btn {
-  padding: 5px 10px;
-  border-radius: 20px;
+/* .btn {
+  padding: 10px 40px;
+  border-radius: 40px;
+  border: 1px solid white;
+} */
+
+
+ .btn {
+  color: #c2c3c4;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-right: 40px;
+  padding: 20px 40px;
+  border-radius: 40px;
+  border: 1px solid #c2c3c4;
+  transition: transform .2s;
+}
+
+/* per far in modo che al bottone ci sia un hover con transform */
+a.btn:hover  {
+  display: inline-block;
+  transform: scale(1.1);
+  color: white;
   border: 1px solid white;
 }
 
-
-.call_to_action a.btn {
-  color: white;
-  font-size: 20px;
-  text-transform: uppercase;
-  text-decoration: none;
-}
 
 /* / BOTTONI */
 
@@ -122,13 +145,22 @@ nav#main_nav {
   padding-bottom: 10px;
 }
 
-/* ridimensioniamo le immagini del nav-menu */
+/* ridimensioniamo le immagini del nav-menu e gli diamo un opacity*/
 #main_nav .nav_menu img {
   height: 30px;
   vertical-align: middle;
   margin-right: 10px;
+  opacity: 0.5;
 }
 
+/* per fare in modo che anche le immagini diventino bianche quando passiamo sopra il collegamento */
+#main_nav .nav_menu ul li a:hover img {
+  opacity: 1;
+}
+
+/* #main_nav .nav_menu ul li.select {
+  border-left: 2px solid #adff2f;
+} */
 
 
 /* creiamo la classe nav-playlist-create per far si che lo scroll verticale riguardi soltanto l'elenco delle playlist create */
@@ -184,8 +216,10 @@ qui bisogna inserire l'overrflow per far si chhe si crei la scrollbar verticale 
 
 
 /* nav bottom */
+
+/* per creare la linea che separa i 2 contenitori di questa sezione */
 #main_nav .nav_bottom .install_nav {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #999999;
   line-height: 40px;
 }
 
@@ -194,10 +228,17 @@ qui bisogna inserire l'overrflow per far si chhe si crei la scrollbar verticale 
 
 }
 
+/* diamo una grandezza all'immagine e un opacità per creare l'wffwtto voluto con l'hover */
 #main_nav .nav_bottom .install_nav img {
   height: 20px;
   vertical-align: middle;
   margin-right: 20px;
+  opacity: 0.5;
+}
+
+/* diamo opacity 1 a tutto il collegamento quando passiamo sopra con mouse */
+#main_nav .nav_bottom .install_nav a:hover img {
+  opacity: 1;
 }
 
 #main_nav .nav_bottom .profile_nav {
@@ -228,7 +269,7 @@ gli viene dato un padding-top di 100px, (se do margin la scrollbar laterale part
 section#main_content {
   width: calc(100% - 250px);
   height: 100%;
-  background-color: blue;
+  background-color: #141922;
   overflow: auto;
   padding-top: 100px;
 }
@@ -249,15 +290,34 @@ section#main_content {
   background-color: rgba(0, 0, 0, 0.64);
   width: calc(100% - 250px);
   height: 100px;
-  line-height: 100px;
   text-align: right;
+  vertical-align: middle;
   z-index: 1;
+
 }
 
 /* per mantenere le proporzioni della call-to-action quando la nav-main si rimpicciolisce */
 @media screen and (max-width: 600px) {
   section#main_content .call_to_action {
     width: calc(100% - 50px);
+  }
+}
+
+/* per specificare che il contenitore deve essere inline block, altrimenti non si riesce a fare la transform con l'hover, il margin è per centrarlo nella riga */
+#main_content .call_to_action .upgrade {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+/* per far sparire la call-to-action quando l'altezza del display diminuisce, togliamo anche il margine al main content */
+
+@media screen and (max-height: 250px) {
+  .call_to_action {
+    display: none;
+  }
+  /* per alzare il padding del main content ina volta che scompare la call-to-action */
+  section#main_content {
+    padding-top: 10px;
   }
 }
 
