@@ -8,6 +8,7 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  min-width: 310px;
 }
 
 ul {
@@ -24,37 +25,13 @@ a:hover {
 }
 
 /* WARNING colori */
-.blue {
-  background-color: blue;
-}
-
-.red {
-  background-color: red;
-}
-
-.violet {
-  background-color: violet;
-}
-
-.clr_gray {
-  color: #999999;
-}
-
-.font-big {
-  font-size: 30px;
-}
 
 /* / REGOLE GENERALI */
 
 /* WARNING BOTTONI */
-/* .btn {
-  padding: 10px 40px;
-  border-radius: 40px;
-  border: 1px solid white;
-} */
 
 
- .btn {
+.btn {
   color: #c2c3c4;
   font-size: 12px;
   text-transform: uppercase;
@@ -340,7 +317,7 @@ section#main_content {
   font-size: 12px;
 }
 
-/* WARNING RECENTLY PLAYED */
+/* WARNING RECENTLY PLAYED section*/
 
 /* per posizionare e colorare bene il titolo della sezione */
 #played h2 {
@@ -349,6 +326,8 @@ section#main_content {
   margin-left: 20px;
 }
 
+
+/* NB le prossime indicazioni verranno utilizzate anche per le altre 2 loste della main-content, l'unica cosa che cambierà sarà il bordo delle immagini della terza sezione */
 /* creiamo una lista ncon caratteristiche flex e wrap per quando si rimpicciolisce il display */
 .played_list {
   display: flex;
@@ -364,7 +343,7 @@ section#main_content {
   text-align: center;
 }
 
-per modificare lo spazio tra i contenitori vengono utilizzate le mediaquery in base alla larghezza del display, viene calcolato anche un margine per cercare di centrare il tutto nella riga
+/* per modificare lo spazio tra i contenitori vengono utilizzate le mediaquery in base alla larghezza del display, viene calcolato anche un margine per cercare di centrare il tutto nella riga */
 @media screen and (max-width: 1170px) {
   .played_element {
     flex-basis: calc(100% / 5 - 20px);
@@ -449,6 +428,25 @@ per modificare lo spazio tra i contenitori vengono utilizzate le mediaquery in b
   color: #999999;
   font-size: 12px;
   padding-top: 10px;
+}
+
+
+/* WARNING CREATE section */
+
+/* per formattare il titolo della sezione */
+#create h2 {
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin-left: 20px;
+}
+
+/* per formattare il paragrafo della sezione */
+#create > p {
+  color: #999999;
+  font-size: 12px;
+  margin-left: 20px;
+  padding-bottom: 25px;
 }
 /* / MAIN CONTENT */
 
