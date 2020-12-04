@@ -281,6 +281,8 @@ section#main_content {
 }
 
 
+/* WARNING CALL-TO-ACTION */
+
 /* qui creiamo la sezione fixed in cima al main-content, gli viene dato lo z-index per fare in modo che rimanga sopra qualsiasi altro elemento della pagina, specialmente riguardo al footer*/
 .call_to_action {
   position: fixed;
@@ -320,6 +322,9 @@ section#main_content {
   }
 }
 
+
+/* WARNING MAIN-CONTENT-NAV */
+
 /* per posizionare gli elementi della lista nel contenitore padre, il wrap serve per fare in modo che quando lo spazio scarseggia, iniziano ad andare a capo */
 .main_content_nav ul {
   display: flex;
@@ -334,6 +339,43 @@ section#main_content {
   text-transform: uppercase;
 }
 
+/* WARNING RECENTLY PLAYED */
+
+/* per posizionare e colorare bene il titolo della sezione */
+#played h2 {
+  color: white;
+  padding: 20px 0px;
+  margin-left: 10px;
+}
+
+/* creiamo una lista ncon caratteristiche flex e wrap per quando si rimpicciolisce il display */
+.played_list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10px;
+}
+
+.played_element {
+  flex-basis: calc(100% / 7);
+  margin: 0 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.played_element .cover img {
+  width: 100%;
+}
+
+.played_element .cover_text h3 {
+  color: white;
+  padding-top: 10px;
+}
+
+.played_element .cover_text p {
+  color: #999999;
+  font-size: 12px;
+  padding-top: 10px;
+}
 /* / MAIN CONTENT */
 
 /* WARNING FOOTER */
