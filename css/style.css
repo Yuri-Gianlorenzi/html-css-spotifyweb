@@ -369,6 +369,7 @@ section#main_content {
 .played_element .cover_text h3 {
   color: white;
   padding-top: 10px;
+  line-height: 16px;
 }
 
 .played_element .cover_text p {
