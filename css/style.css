@@ -77,21 +77,25 @@ Gli viene dato un display flex e una direzione in colonne, grazie ai flex poi ri
 nav#main_nav {
   width: 250px;
   height: 100%;
-  background-color: pink;
+  background-color: black;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 10px;
+  padding: 20px;
 }
 
 /* per rimpicciolire la main-nav al di sotto dei 600px */
 @media screen and (max-width: 600px) {
   nav#main_nav {
     width: 50px;
+    padding: 10px;
   }
 }
 
-
+/* per distanziare il logo dal menu */
+.nav_logo {
+  margin-bottom: 20px;
+}
 
 /* per nascondere il logo small sopra i 600px */
 .nav_logo .logo_small {
@@ -111,6 +115,11 @@ nav#main_nav {
     display: none;
   }
 
+}
+
+/* per distanziare la lista menu */
+.nav_menu ul li {
+  padding-bottom: 10px;
 }
 
 /* ridimensioniamo le immagini del nav-menu */
@@ -141,7 +150,12 @@ qui bisogna inserire l'overrflow per far si chhe si crei la scrollbar verticale 
 .nav_playlist {
   flex-grow: 1;
   overflow-y: auto;
-  min-height: 150px;
+  min-height: 50px;
+}
+
+/* per distanziare gli elementi della playlist */
+.nav_playlist ul li {
+  padding: 10px 0px;
 }
 
 
@@ -160,6 +174,10 @@ qui bisogna inserire l'overrflow per far si chhe si crei la scrollbar verticale 
   /* per fare in modo che una volta sparita la sezione playlist, il nav menu si prenda tutto lo spazio vuoto, senza lasciare che le 3 icone del menu rimangano in centro alla nav */
   #main_nav .nav_menu {
     flex-grow: 1;
+  }
+
+  .install_nav a img {
+    padding-left: 4px;
   }
 
 }
