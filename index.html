@@ -1,180 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <link rel="shortcut icon" type="image/png" href="img/favicon.ico">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- icone/font -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Fontawesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <!-- font -->
+  <!-- Google font -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
-  <title>Spotify Yuri</title>
+  <title>YURIFY</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- utilizziamo un wrapper a cui verrà data una viewport height di 100, e questo rappresenterà il contenitore generale della nostra pagina, contenendo sia il main che il footer -->
   <div id="wrapper">
-    <!-- inizio main, verrà diviso in 2 grandi box, la nav e una sezione generale in cui verranno inseriti tutti i contenuti -->
     <main>
-      <!-- inizio contenitore di tutta la nav che si visualizzerà nella parte sinistra della viewport. verrà suddivisa a sua volta in 2 sezioni: la prima ospiterà il logo, il menu e la lista playlist; la seconda ospiterà la parte dei download -->
       <nav id="main_nav">
-        <!-- inizio top-nav -->
-        <section class="top_nav">
+
+        <div class="nav_logo blue">
           <!-- logo grande -->
-          <div class="logo_nav">
+          <div class="logo_big">
             <a href="#"><img src="img/logo.svg" alt="Logo Spotify"></a>
           </div>
           <!-- logo piccolo, dai 600px in giù -->
           <div class="logo_small">
             <a href="#"><img src="img/logo-small.svg" alt="Logo Spotify small"></a>
           </div>
+        </div>
 
-          <!-- lista menu della main nav -->
-          <div class="menu_nav">
-            <ul>
-              <li>
-                <a href="#"><img src="img/home.svg" alt="home"> Home</a>
-              </li>
-              <li>
-                <a href="#"><img src="img/search.svg" alt="search"> Home</a>
-              </li>
-              <li>
-                <a href="#"><img src="img/libreria.svg" alt="search"> La tua libreria</a>
-              </li>
-            </ul>
-          </div>
+        <div class="nav_menu blue">
+          <ul>
+            <li>
+              <a href="#"><img src="img/home.svg" alt="home"><span class="hidden_small">Home</span></a>
+            </li>
+            <li>
+              <a href="#"><img src="img/search.svg" alt="search"><span class="hidden_small">Cerca</span></a>
+            </li>
+            <li>
+              <a href="#"><img src="img/libreria.svg" alt="search"><span class="hidden_small">La tua libreria</span></a>
+            </li>
+          </ul>
+        </div>
 
-          <!-- sezione playlist della main nav -->
-          <div class="playlist_nav">
-            <h3>playlist</h3>
-            <a href="#"><i class="fas fa-plus-square"></i><span>Crea Playlist</span></a>
-            <ul class="list">
-              <li><a href="#">nome playlist</a></li>
-              <li><a href="#">nome playlist</a></li>
-              <li><a href="#">nome playlist</a></li>
-              <li><a href="#">nome playlist</a></li>
-              <li><a href="#">nome playlist</a></li>
-              <li><a href="#">nome playlist</a></li>
-              <li><a href="#">nome playlist</a></li>
-              <li><a href="#">nome playlist</a></li>
-              <li><a href="#">nome playlist</a></li>
-              <li><a href="#">nome playlist</a></li>
-              <li><a href="#">nome playlist</a></li>
+        <div class="nav_playlist_create">
+          <h3>playlist</h3>
+          <a href="#"><i class="fas fa-plus-square"></i><span>Crea Playlist</span></a>
+        </div>
 
-            </ul>
-          </div>
-        </section>
-        <!-- / top-nav -->
+        <div class="nav_playlist red">
+          <ul>
+            <li><a href="#">Nome Playlist</a></li>
+            <li><a href="#">Nome Playlist</a></li>
+            <li><a href="#">Nome Playlist</a></li>
+            <li><a href="#">Nome Playlist</a></li>
+            <li><a href="#">Nome Playlist</a></li>
+            <li><a href="#">Nome Playlist</a></li>
+            <li><a href="#">Nome Playlist</a></li>
+            <li><a href="#">Nome Playlist</a></li>
+            <li><a href="#">Nome Playlist</a></li>
+            <li><a href="#">Nome Playlist</a></li>
+            <li><a href="#">Nome Playlist</a></li>
+            <li><a href="#">Nome Playlist</a></li>
+            <li><a href="#">Nome Playlist</a></li>
+            <li><a href="#">Nome Playlist</a></li>
+            <li><a href="#">Nome Playlist</a></li>
+            <li><a href="#">Nome Playlist</a></li>
+            <li><a href="#">Nome Playlist</a></li>
+            <li><a href="#">Nome Playlist</a></li>
+            <li><a href="#">Nome Playlist</a></li>
+            <li><a href="#">Nome Playlist</a></li>
+            <li><a href="#">Nome Playlist</a></li>
+            <li><a href="#">Nome Playlist</a></li>
+            <li><a href="#">Nome Playlist</a></li>
+            <li><a href="#">Nome Playlist</a></li>
+            <li><a href="#">ULTIMA PLAYLIST</a></li>
+          </ul>
+        </div>
 
-        <!-- inizio bottom-nav -->
-        <div class="bottom_nav">
+        <div class="nav_bottom violet">
           <div class="install_nav">
-            <a href="#"><img src="img/download.svg" alt="download">Installa app</a>
+            <a href="#"><img src="img/download.svg" alt="download"><span class="hidden_small">Installa app</span></a>
           </div>
 
           <div class="profile_nav">
-            <a href="#"><img src="img/foto_profilo.jpg" alt="profile">Yuri Gianlorenzi</a>
+            <a href="#"><img src="img/foto_profilo.jpg" alt="profile"><span class="hidden_small">Yuri Gianlorenzi</span></a>
           </div>
         </div>
-        <!-- / bottom-nav -->
-
       </nav>
-      <!-- / contenitore della nav -->
 
-      <!-- ininzio sezione pricipale dove ci saranno tutti i contenuti della pagina -->
-      <section id="main_section">
+      <section id="main_content" class="font-big">
         <div class="call_to_action">
-          <a href="#">effettua l'upgrade</a>
+          <a href="#" class="btn">upgrade</a>
         </div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. QUESTA È LA FINE
 
-        <nav class="menu_main">
-          <ul>
-            <li>in evidenza</li>
-            <li>podcast</li>
-            <li>classifiche</li>
-            <li>generi e mood</li>
-            <li>nuove uscite</li>
-            <li>scopri</li>
-          </ul>
-        </nav>
-
-        <div class="main_content">
-          <section id="recently_played">
-            <!-- WARNING: questa modalità flex non va bene, bisogna probabilmente utilizzare una lista -->
-            <div class="title_section">
-              <h2>Recently Played</h2>
-            </div>
-
-            <div class="played_box">
-              <div class="played_img">
-
-              </div>
-              <h3>titolo</h3>
-              <p>sottotitolo</p>
-            </div>
-
-            <div class="played_box">
-              <div class="played_img">
-
-              </div>
-              <h3>titolo</h3>
-              <p>sottotitolo</p>
-            </div>
-
-            <div class="played_box">
-              <div class="played_img">
-
-              </div>
-              <h3>titolo</h3>
-              <p>sottotitolo</p>
-            </div>
-
-            <div class="played_box">
-              <div class="played_img">
-
-              </div>
-              <h3>titolo</h3>
-              <p>sottotitolo</p>
-            </div>
-
-            <div class="played_box">
-              <div class="played_img">
-
-              </div>
-              <h3>titolo</h3>
-              <p>sottotitolo</p>
-            </div>
-
-            <div class="played_box">
-              <div class="played_img">
-
-              </div>
-              <h3>titolo</h3>
-              <p>sottotitolo</p>
-            </div>
-          </section>
-
-          <section id="create_for">
-            <h2>Creato per Yuri Gianlorenzi</h2>
-          </section>
-
-          <section id="popular">
-            <h2>Artisti più popolari</h2>
-          </section>
-        </div>
       </section>
-      <!-- / main-section -->
-
 
     </main>
-    <!-- / main -->
-    <!-- footer -->
-    <footer>
-
-    </footer>
-    <!-- / footer -->
   </div>
+
+  <footer>
+
+  </footer>
 </body>
 </html>

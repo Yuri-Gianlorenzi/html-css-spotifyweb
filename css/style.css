@@ -1,5 +1,6 @@
 /* REGOLE GENERALI */
-*{
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,13 +10,6 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-#wrapper {
-  height: 100vh;
-  width: 100%;
-  background-color: grey;
-}
-
-/* per togliere i pallini da tutte le liste */
 ul {
   list-style: none;
 }
@@ -25,269 +19,224 @@ a {
   color: white;
 }
 
-/* MAIN */
+.blue {
+  background-color: blue;
+}
+
+.red {
+  background-color: red;
+}
+
+.violet {
+  background-color: violet;
+}
+
+.font-big {
+  font-size: 30px;
+}
+
+/* / REGOLE GENERALI */
+
+/* WARNING BOTTONI */
+.btn {
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid white;
+}
+
+
+.call_to_action a.btn {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* / BOTTONI */
+
+/* qui creiamo il container che terrà la nostraviewport */
+#wrapper {
+  height: 100vh;
+  width: 100%;
+  background-color: yellow;
+  overflow: hidden;
+}
+
+/* bisogna dare flex al main, che è il padre dei nostri contenitori principali, inoltre gli viene data un'altezza che deve tenere conto del footer, il quale sarà fixed */
 
 main {
-  width: 100%;
-  height: calc(100% - 100px);
   display: flex;
+  height: calc(100% - 90px);
 }
 
-/* clearfix main */
-main::after {
-  content: '';
-  display: table;
-  clear: both;
-}
 
-/* NAV colonna sinistra della pagina */
+/* WARNING MAIN NAV */
+
+/* la main nav è la nostra colonna sinistra, ha una larghezza fissa fino ai 600px, al di sotto di questa deve rimpicciolirsi e far sparire alcuni contenuti al suo interno. l'altezza deve essere 100%
+Gli viene dato un display flex e una direzione in colonne, grazie ai flex poi riusciamo a suddividere la nostra nav con i contenitori-figli che vogliamo */
 nav#main_nav {
   width: 250px;
-  height: calc(100% - 100px);
-  min-height: 450px;
-  background-color: red;
-  position: fixed;
+  height: 100%;
+  background-color: pink;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
 }
 
+/* per rimpicciolire la main-nav al di sotto dei 600px */
 @media screen and (max-width: 600px) {
   nav#main_nav {
     width: 50px;
   }
 }
 
-.top_nav {
-  height: 80%;
-  width: calc(100% - 20px);
-  margin: 10px;
-  background-color: black;;
-  display: flex;
-  flex-direction: column;
-}
 
 
-
-#main_nav .top_nav .logo_nav {
-  width: 100%;
-  height: 80px;
-  /* background-color: yellow; */
-}
-
-/* per nascondere il logo grande quando la nav-main si rimpicciolisce */
-@media screen and (max-width: 600px) {
-  #main_nav .top_nav .logo_nav {
-    display: none;
-  }
-}
-
-#main_nav .top_nav .logo_small {
+/* per nascondere il logo small */
+.nav_logo .logo_small {
   display: none;
 }
 
-/* per far comparire il logo piccolo quando la nav-main si rumbicciolisce */
-@media screen and (max-width: 600px) {
-  #main_nav .top_nav .logo_small {
-    display: block;
-  }
-}
 
-#main_nav .top_nav .menu_nav {
-  width: 100%;
-  height: 40%;
-  padding: 10px 0;
-}
-
-/* per dividere di qualche pixel gli elementi della nav-menu */
-#main_nav .top_nav .menu_nav ul li {
-  padding: 5px 0;
-}
-
-/* per dare una grandezza alle immagini della nav-menu */
-#main_nav .top_nav .menu_nav img {
+/* ridimensioniamo le immagini del nav-menu */
+#main_nav .nav_menu img {
   height: 30px;
   vertical-align: middle;
   margin-right: 10px;
 }
 
-/* WARNING PLAYLIST DELLA MAIN NAV */
 
-#main_nav .top_nav .playlist_nav {
-  width: 100%;
-  height: 60%;
-  padding: 5px 0;
-}
 
-#main_nav .top_nav .playlist_nav h3 {
+/* creiamo la classe nav-playlist-create per far si che lo scroll verticale riguardi soltanto l'elenco delle playlist create */
+#main_nav .nav_playlist_create h3 {
   text-transform: uppercase;
   padding: 10px 0;
+  color: white;
 }
 
-#main_nav .top_nav .playlist_nav > a {
-  padding: 10px 0;
-  background-color: red;
-  display: block;
-  line-height: 40px;
-}
-
-#main_nav .top_nav .playlist_nav > a i {
+#main_nav .nav_playlist_create a i {
   font-size: 40px;
   vertical-align: middle;
   padding-right: 20px;
 }
 
-/* per far scomparire la playlist quando la nav-main si rimpicciolisce */
+
+/* grazie ai flex, in particolare flex-grow facciamo in modo che la parte della nav riguardante la playlist si prenda lo spazio lasciato libero dagli altri contenitori della sezione
+qui bisogna inserire l'overrflow per far si chhe si crei la scrollbar verticale quando il contenuto va oltre la dimensione del contenitore. gli viene data una min height per far si che la nav-bottom torni su quando ridimensioniamo solo fino ad un certo punto */
+.nav_playlist {
+  flex-grow: 1;
+  overflow-y: auto;
+  min-height: 150px;
+}
+
+
+/* per far scomparire la playlist e le scritte didascaliche quando la nav-main si rimpicciolisce */
 @media screen and (max-width: 600px) {
-  #main_nav .top_nav .playlist_nav {
+  #main_nav .nav_playlist_create,
+  #main_nav .nav_playlist {
     display: none;
   }
+
+  /* per eliminare le scritte didascaliche anche dalla nav-bottom */
+  #main_nav .hidden_small {
+    display: none;
+  }
+
 }
 
-/* per creare la barra di scorrimento a fianco alla playlist quando rimpiccioliamo in altezza la pagina */
-#main_nav .top_nav .playlist_nav .list {
-  overflow: scroll;
-  height: 80%;
-}
 
-/* / playlist della main nav */
-
-.bottom_nav {
-  height: 20%;
-  width: calc(100% - 20px);
-  margin: 10px;
-  background-color: black;
-  display: flex;
-  flex-direction: column;
-}
-
-#main_nav .bottom_nav .install_nav {
-  height: 50%;
-  width: 100%;
+/* nav bottom */
+#main_nav .nav_bottom .install_nav {
   border-bottom: 1px solid white;
-
+  line-height: 40px;
 }
 
-#main_nav .bottom_nav .install_nav a {
+#main_nav .nav_bottom .install_nav a {
   padding: 5px 0;
 
 }
 
-#main_nav .bottom_nav .install_nav img {
+#main_nav .nav_bottom .install_nav img {
   height: 20px;
   vertical-align: middle;
   margin-right: 20px;
 }
 
-#main_nav .bottom_nav .profile_nav {
-  height: 50%;
-  width: 100%;
+#main_nav .nav_bottom .profile_nav {
   padding: 10px 0;
 }
 
-#main_nav .bottom_nav .profile_nav img {
-  height: 40px;
+#main_nav .nav_bottom .profile_nav img {
+  height: 30px;
   vertical-align: middle;
   margin-right: 20px;
   border-radius: 50%;
 }
 
-/* / NAV colonna sinistra della pagina */
+@media screen and (max-width: 600px) {
 
-/* MAIN SECTION */
-#main_section {
-  width: calc(100% - 250px);
-  margin-left: 250px;
-  float: left;
-  background-color: blue;
-  overflow-y: auto;
+  #main_nav .nav_bottom .install_nav img,
+  #main_nav .nav_bottom .profile_nav img {
+    /* text-align: center; */
+    /* margin-right: 0px; */
+  }
+
 }
 
+/* WARNING MAIN CONTENT */
 
-/* per mantenere le stesse proporzioni quando la nav-main si rimpicciolisce */
+/* il main-content deve avere una larghezza calcolata tenendo conto della larghezza della main-nav, l'altezza diamo 100% perchè prende come riferimento l'altezza del main
+gli viene dato un padding-top di 100px, (se do margin la scrollbar laterale parte sotto la call-to-action) ovvero della stessa altezza della call-to-action, la quale è fixed*/
+section#main_content {
+  width: calc(100% - 250px);
+  height: 100%;
+  background-color: blue;
+  overflow: auto;
+  padding-top: 100px;
+}
+
+/* per mantenere le stesse proporzioni quando la main-nav si rimpicciolisce a 50px */
 @media screen and (max-width: 600px) {
-  #main_section {
+  section#main_content {
     width: calc(100% - 50px);
-    margin-left: 50px;
-    /* float: left;
-    background-color: blue;
-    overflow-y: auto; */
   }
 }
 
-/* / NAV colonna sinistra della pagina */
 
-#main_section .call_to_action {
-  height: 100px;
-  width: calc(100% - 250px);
-  background-color: rgba(0, 0, 0, 0.68);
-  text-align: right;
-  line-height: 100px;
+/* qui creiamo la sezione fixed in cima al main-content, gli viene dato lo z-index per fare in modo che rimanga sopra qualsiasi altro elemento della pagina, specialmente riguardo al footer*/
+.call_to_action {
   position: fixed;
-  /* top: 0; */
-  color: white;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.64);
+  width: calc(100% - 250px);
+  height: 100px;
+  line-height: 100px;
+  text-align: right;
   z-index: 1;
 }
 
-
 /* per mantenere le proporzioni della call-to-action quando la nav-main si rimpicciolisce */
 @media screen and (max-width: 600px) {
-  #main_section .call_to_action {
-    height: 100px;
+  section#main_content .call_to_action {
     width: calc(100% - 50px);
-
   }
 }
 
-.call_to_action a {
-  color: white;
-}
 
-#main_section .menu_main {
-  text-align: center;
-  margin-top: 100px;
-}
-#main_section .menu_main ul li {
-  display: inline-block;
-  padding: 10px;
-}
+/* / MAIN CONTENT */
 
+/* WARNING FOOTER */
 
-/* MAIN CONTENT contenitore dei contenuti  */
-
-.main_content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: coral;
-}
-
-.main_content > section {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.title_section {
-  width: 100%;
-}
-
-.played_box {
-  height: 100px;
-  background-color: red;
-}
-/* / MAIN CONTENT sezione dei contenuti */
-/* / MAIN SECTION */
-/* / MAIN */
-
-/* FOOTER */
+/* il footer ha un'altezza fissa ed è fixed. per far si che vada sotto la call-to-action quando rimpiccioliamo l'altezza della pagina, dobbiamo dare z-index all'elemento in cima al main-content */
 footer {
   width: 100%;
-  height: 100px;
-  background-color: green;
+  height: 90px;
   position: fixed;
   bottom: 0;
-
+  left: 0;
+  background-color: green;
 }
 
 
