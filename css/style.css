@@ -93,11 +93,25 @@ nav#main_nav {
 
 
 
-/* per nascondere il logo small */
+/* per nascondere il logo small sopra i 600px */
 .nav_logo .logo_small {
   display: none;
 }
 
+/* per cambiare i loghi quando si passa alla versione mobile */
+@media screen and (max-width: 600px) {
+
+  /* logo piccolo */
+  .nav_logo .logo_small {
+    display: block;
+  }
+
+  /* logo grande */
+  .nav_logo .logo_big {
+    display: none;
+  }
+
+}
 
 /* ridimensioniamo le immagini del nav-menu */
 #main_nav .nav_menu img {
@@ -141,6 +155,11 @@ qui bisogna inserire l'overrflow per far si chhe si crei la scrollbar verticale 
   /* per eliminare le scritte didascaliche anche dalla nav-bottom */
   #main_nav .hidden_small {
     display: none;
+  }
+
+  /* per fare in modo che una volta sparita la sezione playlist, il nav menu si prenda tutto lo spazio vuoto, senza lasciare che le 3 icone del menu rimangano in centro alla nav */
+  #main_nav .nav_menu {
+    flex-grow: 1;
   }
 
 }

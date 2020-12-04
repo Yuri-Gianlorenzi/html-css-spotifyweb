@@ -13,10 +13,13 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- contenitore generale, utile alla viewport -->
   <div id="wrapper">
-    <main>
-      <nav id="main_nav">
 
+    <main>
+      <!-- contenitore nel quale si trova tutta la nav -->
+      <nav id="main_nav">
+        <!-- box dei loghi -->
         <div class="nav_logo blue">
           <!-- logo grande -->
           <div class="logo_big">
@@ -27,7 +30,7 @@
             <a href="#"><img src="img/logo-small.svg" alt="Logo Spotify small"></a>
           </div>
         </div>
-
+        <!-- box del menu -->
         <div class="nav_menu blue">
           <ul>
             <li>
@@ -41,12 +44,12 @@
             </li>
           </ul>
         </div>
-
+        <!-- box utilizzato per dividere la sezione playlist in 2 da riuscire a visualizzare lo scroll verticale solo alla lista delle playlist -->
         <div class="nav_playlist_create">
           <h3>playlist</h3>
           <a href="#"><i class="fas fa-plus-square"></i><span>Crea Playlist</span></a>
         </div>
-
+        <!-- lista playlist -->
         <div class="nav_playlist red">
           <ul>
             <li><a href="#">Nome Playlist</a></li>
@@ -76,19 +79,23 @@
             <li><a href="#">ULTIMA PLAYLIST</a></li>
           </ul>
         </div>
-
+        <!-- parte inferiore della nav, divisa a sua volta in 2 contenitori -->
         <div class="nav_bottom violet">
+          <!-- box download -->
           <div class="install_nav">
             <a href="#"><img src="img/download.svg" alt="download"><span class="hidden_small">Installa app</span></a>
           </div>
-
+          <!-- box profilo -->
           <div class="profile_nav">
             <a href="#"><img src="img/foto_profilo.jpg" alt="profile"><span class="hidden_small">Yuri Gianlorenzi</span></a>
           </div>
         </div>
       </nav>
+      <!-- / main nav -->
 
+      <!-- inizio contenitore principale pagina -->
       <section id="main_content" class="font-big">
+        <!-- contenitore call_to_action -->
         <div class="call_to_action">
           <a href="#" class="btn">upgrade</a>
         </div>
