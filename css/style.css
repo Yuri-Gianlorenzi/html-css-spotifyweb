@@ -486,8 +486,78 @@ footer {
   position: fixed;
   bottom: 0;
   left: 0;
+  background-color: #282828;
+}
+
+/* qui creiamo la sezione player, conterrà tutti gli elementi del footer, avrà il display flex, si svilupperà per righe e gli diamo uno space between per posizionare correttamente i suoi tre macro-elementi */
+
+section#player {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.coral {
+  background-color: coral;
+}
+
+.green {
   background-color: green;
 }
 
 
+#player .song {
+  /* width: 100px; */
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#player .song .song_cover {
+  /* width: 25%; */
+  height: 80%;
+}
+
+#player .song .song_cover img {
+  /* width: 100%; */
+  height: 100%;
+  margin-right: 10px;
+}
+
+
+#player .song .song_name {
+  margin-right: 10px;
+}
+
+#player .song .song_name h3 {
+  color: white;
+  font-size: 13px;
+}
+
+#player .song .song_name p {
+  color: #999999;
+  font-size: 11px;
+}
+
+#player .song .song_save a:first-child {
+  padding-right: 5px;
+}
+
+#player .audio {
+  width: 100px;
+  height: 100%;
+}
+
+.controller {
+  width: 100px;
+  height: 100%;
+}
 /* / FOOTER */
