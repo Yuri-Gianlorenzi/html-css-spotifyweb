@@ -68,7 +68,6 @@ a:hover {
 
 /* per far in modo che al bottone ci sia un hover con transform */
 a.btn:hover  {
-  display: inline-block;
   transform: scale(1.1);
   color: white;
   border: 1px solid white;
@@ -321,6 +320,19 @@ section#main_content {
   }
 }
 
+/* per posizionare gli elementi della lista nel contenitore padre, il wrap serve per fare in modo che quando lo spazio scarseggia, iniziano ad andare a capo */
+.main_content_nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* per centrare verticalmente gli elementi della lista, per distanziarli tra di loro e far si che siano in maiuscolo*/
+.main_content_nav_list li {
+  line-height: 50px;
+  margin: 0 20px;
+  text-transform: uppercase;
+}
 
 /* / MAIN CONTENT */
 
