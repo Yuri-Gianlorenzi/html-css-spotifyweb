@@ -355,6 +355,7 @@ section#main_content {
   margin-left: 10px;
 }
 
+/* qui utilizziamo flex basis per dare una larghezza agli elementi della lista, un margine destro e sinistro per distanziarli con precisione, centriamo il testo nel contenitore e gli diamo un margin bottom per separarli quando andranno a capo */
 .played_element {
   flex-basis: calc(100% / 7);
   margin: 0 10px;
@@ -362,16 +363,50 @@ section#main_content {
   text-align: center;
 }
 
+/* diamo un position relative al contenitore dell'immagine, ci serve per il layover */
+.played_element .cover {
+  position: relative;
+}
+
+/* qui diamo la larghezza all'immagine presente nel contenitore */
 .played_element .cover img {
   width: 100%;
 }
 
+/* creiamo il layover che deve comparire sull'immagine quando passiamo sopra l'intero contenitore della lista, il play button e l'opacity le devo dare solo all'immagine */
+.played_element .cover .img_layover {
+  font-size: 70px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  display: none;
+}
+
+/* impostiamo il cursore pointer quando passiamo sopra l'intero contenitore */
+.played_element:hover {
+  cursor: pointer;
+}
+
+/* per rendere scura l'immagine utilizziamo l'opacity della metà */
+.played_element:hover .cover img {
+  opacity: 0.5;
+}
+
+/* indichiamo che il layover si deve vedere solo  quando siamo in over */
+.played_element:hover .cover .img_layover {
+  display: block;
+}
+
+/* formattiamo il titole del contenitore e diamo una lineheight in maniera tale che se il titolo è lungo non occupi troppo spazio in verticale */
 .played_element .cover_text h3 {
   color: white;
   padding-top: 10px;
   line-height: 16px;
 }
 
+/* formattiamo il sottotitolo del contenitore */
 .played_element .cover_text p {
   color: #999999;
   font-size: 12px;
