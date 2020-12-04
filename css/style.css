@@ -432,6 +432,7 @@ section#main_content {
 
 
 /* WARNING CREATE section */
+/* NB la formattazione degli elementi della lista di questa sezione hanno le stesse regole di quelli della sezione precedente, dunque sono state usate le stesse classi e mediaquery di quelle precedenti */
 
 /* per formattare il titolo della sezione */
 #create h2 {
@@ -448,6 +449,32 @@ section#main_content {
   margin-left: 20px;
   padding-bottom: 25px;
 }
+
+/* WARNING POPULAR section */
+/* NB la formattazione degli elementi della lista di questa sezione hanno le stesse regole di quelli della prima  e della seconda sezione, dunque sono state utilizzate le stesse classi e mediaquery di quelle precedenti, l'unica cosa da cambiare è il bordo all'immagine, che deve visualizzarsi come un cerchio */
+
+/* per formattare il titolo della sezione */
+#popular h2 {
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin-left: 20px;
+}
+
+/* per formattare il paragrafo della sezione */
+#popular > p {
+  color: #999999;
+  font-size: 12px;
+  margin-left: 20px;
+  padding-bottom: 25px;
+}
+
+/* lúnica cosa che cambia dalle altre liste, qui diamo un border radius 50% per rendere l'immagine rotonda */
+#popular .played_element .cover img {
+  width: 100%;
+  border-radius: 50%;
+}
+
 /* / MAIN CONTENT */
 
 /* WARNING FOOTER */
