@@ -511,7 +511,7 @@ section#player {
   background-color: green;
 }
 
-
+/* qui creiamo il container per la canzone in riproduzione, impostiamo il display flex */
 #player .song {
   /* width: 100px; */
   height: 100%;
@@ -521,42 +521,140 @@ section#player {
   align-items: center;
 }
 
+/* WARNING SONG section */
+
+/* la sezione riguardante l'immagine della canzone in riproduzione deve prendere l'80% dell'altezza del contenitore padre*/
 #player .song .song_cover {
-  /* width: 25%; */
   height: 80%;
 }
 
+/* l'immagine della canzone in riproduzione deve prendere tutta l'altezza del contenitore padre, in più si da un margine destro per "allontanare" il nome della canzone in riproduzione */
 #player .song .song_cover img {
-  /* width: 100%; */
   height: 100%;
   margin-right: 10px;
 }
 
-
+/* qui formattiamo il testo della sezione song */
 #player .song .song_name {
   margin-right: 10px;
 }
 
+/* titolo sezione song */
 #player .song .song_name h3 {
   color: white;
   font-size: 13px;
 }
 
+/* sottotitolo sezione song */
 #player .song .song_name p {
   color: #999999;
   font-size: 11px;
 }
 
+/* qui utilizziamo i selettori avanzati per dare dei padding al cuoricino */
 #player .song .song_save a:first-child {
   padding-right: 5px;
+  padding-left: 10px;
+}
+
+/* WARNING CONTROLLER section */
+
+/* PLAYER BUTTON */
+
+/* qui diamo delle indicazioni al contenitore che terrà gli elementi interattivi del player */
+#player .controller {
+  height: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 1;
+  padding: 0 50px;
+}
+
+/* qui impostiamo che la lista si sviluppi in orizzontale, diamo un padding per distanziare gli elementi */
+#player .controller .player_button ul li {
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 20px;
+  transition: scale 0.4s;
+  vertical-align: middle;
+}
+
+/* qui impostiamo che i collegamenti degli item della lista siano inline block per potergli dare una trasformazione in scala quando gli passiamo sopra con il mouse, nel nostro caso questo deve avvenire solo per il pulsante play */
+#player .controller .player_button ul li a {
+  display: inline-block;
+}
+
+.bigger a {
+  font-size: 35px;
+}
+
+/* qui applichiamo la trasformazione grazie all'hover del pulsante play */
+.bigger:hover a {
+  transform: scale(1.2);
+}
+
+/* PLAYER TIME */
+
+/* qui diamo le indicazioni flex al box che contiene il tempo trascorso, la durata totale e la barra */
+.player_time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.player_time .time_go {
+  color: #999999;
+  font-size: 12px;
+  padding-right: 20px;
+}
+
+.time_barr {
+  height: 4px;
+  border-radius: 4px;
+  background-color: #999999;
+  cursor: pointer;
+  flex-grow: 1;
+}
+
+.go_barr {
+  position: relative;
+  height: 100%;
+  width: 20%;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.barr_point {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: block;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: white;
+  display: none;
+}
+
+.time_barr:hover .barr_point {
+  display: block;
+}
+
+.time_barr:hover .go_barr {
+  background-color: rgb(92, 167, 90);
+}
+
+.player_time .time_tot {
+  color: #999999;
+  font-size: 12px;
+  padding-left: 20px;
 }
 
 #player .audio {
-  width: 100px;
-  height: 100%;
-}
-
-.controller {
   width: 100px;
   height: 100%;
 }
