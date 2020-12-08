@@ -272,13 +272,16 @@
     <section id="player">
       <!-- all'interno di quasto contenitore troveremo altri tre contenitori -->
       <div class="song">
+        <!-- contenitore dell'immagine della canzone in riproduzione -->
         <div class="song_cover">
           <img src="img/metal_lifting.jpg" alt="Song Cover">
         </div>
+        <!-- nome canzone e arista in riproduzione -->
         <div class="song_name">
           <a href="#"><h3>Heavy Metal</h3></a>
           <a href="#"><p>Song Name</p></a>
         </div>
+        <!-- icone dei preferiti e cartelle -->
         <div class="song_save">
           <a href="#"><i class="far fa-heart"></i></a>
           <a href="#"><i class="far fa-folder"></i></a>
@@ -286,6 +289,7 @@
       </div>
 
       <div class="controller">
+        <!-- contenitore con la lista utilizzata per creare il player della riproduzione, ovvero i vari comandi -->
         <div class="player_button">
           <ul>
             <li><a href="#"><i class="fas fa-random"></i></a></li>
@@ -296,26 +300,41 @@
           </ul>
 
         </div>
-
+        <!-- contenitore utilizzato per creare la barra del tempo di riproduzione -->
         <div class="player_time">
+          <!-- tempo sinistra -->
           <div class="time_go">0:30</div>
-
+          <!-- contenitore della barra -->
           <div class="time_barr">
             <div class="go_barr">
               <div class="barr_point"></div>
             </div>
           </div>
-
+          <!-- tempo destra -->
           <div class="time_tot">4:20</div>
-
         </div>
       </div>
 
-      <div class="audio green">
+      <!-- contenitore della lista utilizzata per creare la sezione audio del footer -->
+      <div class="audio">
+        <ul class="audio_list">
+          <li><a href="#"><i class="fas fa-list-ul"></i></a></li>
+          <li><a href="#"><i class="fas fa-desktop"></i></a></li>
+          <li class="audio_volume">
+            <a href="#"><i class="fas fa-volume-up"></i></a>
+            <div class="audio_barr">
+              <div class="go_barr">
+                <div class="barr_point"></div>
+              </div>
+            </div>
+          </li>
+
+        </ul>
 
       </div>
-
+      <!-- fine contenitore audio del footer -->
     </section>
+    <!-- / player section -->
 
   </footer>
 </body>

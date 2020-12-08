@@ -513,7 +513,6 @@ section#player {
 
 /* qui creiamo il container per la canzone in riproduzione, impostiamo il display flex */
 #player .song {
-  /* width: 100px; */
   height: 100%;
   padding: 10px;
   display: flex;
@@ -527,6 +526,7 @@ section#player {
 #player .song .song_cover {
   height: 80%;
 }
+
 
 /* l'immagine della canzone in riproduzione deve prendere tutta l'altezza del contenitore padre, in più si da un margine destro per "allontanare" il nome della canzone in riproduzione */
 #player .song .song_cover img {
@@ -549,6 +549,28 @@ section#player {
 #player .song .song_name p {
   color: #999999;
   font-size: 11px;
+}
+
+@media screen and (max-width: 768px) {
+  /* per ridimensionare l'immagine per i medium small devices */
+  #player .song .song_cover {
+    height: 60%;
+  }
+
+  /* per togliere il margine al nome della acnzone */
+  #player .song .song_name {
+    margin-right: 0px;
+  }
+
+  /* per diminuire il font del titolo della canzone */
+  #player .song .song_name h3 {
+    font-size: 11px;
+  }
+
+  /* per diminuire il font del sottotitolo della canzone */
+  #player .song .song_name p {
+    font-size: 9px;
+  }
 }
 
 /* qui utilizziamo i selettori avanzati per dare dei padding al cuoricino */
@@ -587,8 +609,61 @@ section#player {
   display: inline-block;
 }
 
+/* per dare una gransezza maggiore al play button */
 .bigger a {
   font-size: 35px;
+}
+
+/* per diminuire il padding tra le tre sezioni del footer */
+@media screen and (max-width: 992px) {
+  #player .controller {
+    padding: 0 25px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* per rimpicciolire la lista di comandi per i medium small devices */
+  #player .controller .player_button ul li {
+    font-size: 15px;
+  }
+
+  /* per ridimensionare il play button */
+  .bigger a {
+    font-size: 20px;
+  }
+
+  /* per ridimensionare il padding tra i tre elementi principali del footer */
+  #player .controller {
+    padding: 0 15px;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  /* per rimpicciolire la lista di comandi per i medium small devices */
+  #player .controller .player_button ul li {
+    font-size: 12px;
+  }
+
+  .bigger a {
+    font-size: 16px;
+  }
+
+  #player .controller {
+    padding: 0 15px;
+  }
+
+
+  #player .controller .player_button ul li {
+    padding: 0 5px;
+  }
+
+}
+
+@media screen and (max-width: 424px) {
+  #player .controller .player_button ul li {
+    padding: 0 2px;
+  }
 }
 
 /* qui applichiamo la trasformazione grazie all'hover del pulsante play */
@@ -605,12 +680,21 @@ section#player {
   align-items: center;
 }
 
+/* qui viene specificato colore, grandezza del font e padding del tempo trascorso della riproduzione */
 .player_time .time_go {
   color: #999999;
   font-size: 12px;
   padding-right: 20px;
 }
 
+@media screen and (max-width: 768px) {
+  .player_time .time_go {
+    font-size: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* qui creiamo la barra totale della riproduzione */
 .time_barr {
   height: 4px;
   border-radius: 4px;
@@ -619,6 +703,7 @@ section#player {
   flex-grow: 1;
 }
 
+/* qui impostiamo la barra della riproduzione in atto della canzone */
 .go_barr {
   position: relative;
   height: 100%;
@@ -627,6 +712,7 @@ section#player {
   background-color: white;
 }
 
+/* qui creiamo il pallino che deve comparire quando passiamo spora la bassa principale */
 .barr_point {
   position: absolute;
   top: 50%;
@@ -640,22 +726,109 @@ section#player {
   display: none;
 }
 
+/* questo pallino deve comparire quando siamo con l'hover sopra la barra totale */
 .time_barr:hover .barr_point {
   display: block;
 }
 
+/* per cambiare colore alla barra della riproduzione quando ci passiamo sopra con il mouse */
 .time_barr:hover .go_barr {
   background-color: rgb(92, 167, 90);
 }
 
+/* qui specifichiamo font, colore e padding del tempo totale della canzone */
 .player_time .time_tot {
   color: #999999;
   font-size: 12px;
   padding-left: 20px;
 }
 
+@media screen and (max-width: 768px) {
+  .player_time .time_tot {
+    font-size: 10px;
+    padding-left: 10px;
+  }
+}
+
+/* PLAYER AUDIO */
+
 #player .audio {
-  width: 100px;
+  width: 17%;
+  padding: 10px;
+}
+
+#player .audio .audio_list {
   height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+#player .audio .audio_list .audio_volume {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#player .audio .audio_list .audio_volume a {
+  padding-right: 10px;
+}
+
+/* qui creiamo la barra totale dell'audio */
+.audio_barr {
+  height: 4px;
+  border-radius: 4px;
+  background-color: #999999;
+  cursor: pointer;
+  flex-grow: 1;
+}
+
+/* qui impostiamo la barra del'effettivo audio utilizzato dall'utente */
+.audio_barr .go_barr {
+  position: relative;
+  height: 100%;
+  width: 20%;
+  border-radius: 4px;
+  background-color: white;
+}
+
+/* qui creiamo il pallino che deve comparire quando passiamo spora la barra audio principale */
+.audio_barr .barr_point {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: block;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: white;
+  display: none;
+}
+
+/* questo pallino deve comparire quando siamo con l'hover sopra la barra totale */
+.audio_barr:hover .barr_point {
+  display: block;
+}
+
+/* per cambiare colore alla barra della riproduzione quando ci passiamo sopra con il mouse */
+.audio_barr:hover .go_barr {
+  background-color: rgb(92, 167, 90);
+}
+
+/* per migliorare la sezione audio nel responsive */
+@media screen and (max-width: 880px) {
+  /* diamo una larghezza di 100% così l'audio si prende una riga intera */
+  #player .audio .audio_list .audio_volume {
+    width: 100%;
+  }
+
+  /* cambiamo il flex in space around per centrare le 2 icone che rimangono sulla stessa riga */
+  #player .audio .audio_list {
+    justify-content: space-around;
+  }
 }
 /* / FOOTER */
