@@ -275,6 +275,11 @@ qui bisogna inserire l'overrflow per far si chhe si crei la scrollbar verticale 
   vertical-align: middle;
   margin-right: 20px;
   border-radius: 50%;
+  transition: 0.5s;
+}
+
+#main_nav .nav_bottom .profile_nav a:hover img{
+  transform: scale(5);
 }
 
 @media screen and (max-width: 600px) {
@@ -654,6 +659,20 @@ section#player {
   }
 }
 
+/* per eliminare l'immagine della canzone in riproduzione quando il display risulta molto stretto */
+@media screen and (max-width: 388px) {
+  #player .song .song_cover {
+    display: none;
+  }
+}
+
+/* per eliminare le icone della cartella e preferiti quando il display risulta piccolissimo */
+@media screen and (max-width: 330px) {
+  #player .song .song_save {
+    display: none;
+  }
+}
+
 /* qui utilizziamo i selettori avanzati per dare dei padding al cuoricino */
 #player .song .song_save a:first-child {
   padding-right: 5px;
@@ -911,5 +930,12 @@ section#player {
   #player .audio .audio_list {
     justify-content: space-around;
   }
+}
+
+/* per eliminare le 2 icone quando il display risulta piccolissimo */
+@media screen and (max-width: 388px) {
+   .audio_hidden {
+     display: none;
+   }
 }
 /* / FOOTER */
