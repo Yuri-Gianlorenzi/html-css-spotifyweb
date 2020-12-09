@@ -154,6 +154,14 @@ nav#main_nav {
   padding-left: 7px;
 }
 
+/* per fare in modo che compaia la barra gialla a sinistra anche alle altre icone non selezionate */
+#main_nav .nav_menu ul li:not(:first-child):hover {
+  border-left: 3px solid #adff2f;
+  /* per allineare bene l'elemento ,tenendo conto del bordo di 3px */
+  padding-left: 7px;
+}
+
+
 /* per non far vedere il bordo giallo nella versione mobile e mantenerlo centrato */
 @media screen and (max-width: 600px) {
   #main_nav .nav_menu ul li.select {
@@ -366,6 +374,19 @@ section#main_content {
 
 /* creiamo uno pseudo-elemento con l'after, e lo posizioniamo con l'absolute  */
 #main_content .main_content_nav .main_content_nav_list li a.active:after {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  content: '';
+  display: block;
+  height: 3px;
+  width: 35px;
+  background-color: #adff2f;
+}
+
+/* per fare in modo che, spostandosi sul menù compaiano le barre gialle con l'hover */
+#main_content .main_content_nav .main_content_nav_list li a:hover:after {
   position: absolute;
   bottom: 0px;
   left: 50%;
