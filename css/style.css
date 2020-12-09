@@ -358,6 +358,25 @@ section#main_content {
   font-size: 12px;
 }
 
+/* per creare la barra gialla sotto il nome, dobbiamo dare il position relative all'elemento padre del pseudo elemento, che nel nostro caso sarà l'after */
+#main_content .main_content_nav .main_content_nav_list li a {
+  position: relative;
+  padding-bottom: 5px;
+}
+
+/* creiamo uno pseudo-elemento con l'after, e lo posizioniamo con l'absolute  */
+#main_content .main_content_nav .main_content_nav_list li a.active:after {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  content: '';
+  display: block;
+  height: 3px;
+  width: 35px;
+  background-color: #adff2f;
+}
+
 /* WARNING RECENTLY PLAYED section*/
 
 /* per posizionare e colorare bene il titolo della sezione */
