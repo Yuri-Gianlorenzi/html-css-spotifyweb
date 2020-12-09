@@ -80,7 +80,7 @@ nav#main_nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 /* per rimpicciolire la main-nav al di sotto dei 600px */
@@ -94,6 +94,7 @@ nav#main_nav {
 /* per distanziare il logo dal menu */
 .nav_logo {
   margin-bottom: 20px;
+  padding: 20px;
 }
 
 /* per nascondere il logo small sopra i 600px */
@@ -103,6 +104,10 @@ nav#main_nav {
 
 /* per cambiare i loghi quando si passa alla versione mobile */
 @media screen and (max-width: 600px) {
+  /* per eliminare il padding quando la main nav si rimpicciolisce */
+  .nav_logo {
+    padding: 0px;
+  }
 
   /* logo piccolo */
   .nav_logo .logo_small {
@@ -116,9 +121,17 @@ nav#main_nav {
 
 }
 
-/* per distanziare la lista menu */
+/* per distanziare tra loro gli elementi della lista menu*/
 .nav_menu ul li {
-  padding-bottom: 10px;
+  padding: 5px 10px;
+}
+
+/* per fare in modo che nella versione mobile le icone rimangano centrate devo togliere il padding laterale */
+@media screen and (max-width: 600px) {
+  .nav_menu ul li {
+    padding: 5px 0px;
+  }
+
 }
 
 /* ridimensioniamo le immagini del nav-menu e gli diamo un opacity*/
@@ -134,12 +147,27 @@ nav#main_nav {
   opacity: 1;
 }
 
-/* #main_nav .nav_menu ul li.select {
-  border-left: 2px solid #adff2f;
-} */
+/* per far comparire il bordo giallo a sinistra della casetta */
+#main_nav .nav_menu ul li.select {
+  border-left: 3px solid #adff2f;
+  /* per allineare bene l'elemento ,tenendo conto del bordo di 3px */
+  padding-left: 7px;
+}
 
+/* per non far vedere il bordo giallo nella versione mobile e mantenerlo centrato */
+@media screen and (max-width: 600px) {
+  #main_nav .nav_menu ul li.select {
+    border-left: 0;
+    padding-left: 0;
+  }
+}
 
 /* creiamo la classe nav-playlist-create per far si che lo scroll verticale riguardi soltanto l'elenco delle playlist create */
+
+#main_nav .nav_playlist_create {
+  padding: 0px 10px;
+}
+
 #main_nav .nav_playlist_create h3 {
   text-transform: uppercase;
   padding: 10px 0;
@@ -159,6 +187,7 @@ qui bisogna inserire l'overrflow per far si chhe si crei la scrollbar verticale 
   flex-grow: 1;
   overflow-y: auto;
   min-height: 50px;
+  padding: 0 10px;
 }
 
 /* per distanziare gli elementi della playlist */
@@ -192,6 +221,18 @@ qui bisogna inserire l'overrflow per far si chhe si crei la scrollbar verticale 
 
 
 /* nav bottom */
+
+/* per dare un margine a tutto il contenitore */
+#main_nav .nav_bottom {
+  padding: 0 10px;
+}
+
+/* per eliminare il padding nella versione mobile e centrare gli elementi */
+@media screen and (max-width: 600px) {
+  #main_nav .nav_bottom {
+    padding: 0px;
+  }
+}
 
 /* per creare la linea che separa i 2 contenitori di questa sezione */
 #main_nav .nav_bottom .install_nav {
